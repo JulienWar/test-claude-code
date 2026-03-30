@@ -1,0 +1,66 @@
+<h2>Design — Section 1 : Structure des fichiers</h2>
+<p class="subtitle">Organisation du projet Next.js. Chaque section Figma = un composant isolé.</p>
+
+<div class="section">
+  <h3>Arborescence du projet</h3>
+  <div class="mockup">
+    <div class="mockup-header">Racine du projet</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:13px;line-height:1.8">
+      <div>📁 <strong>app/</strong> <span style="opacity:.5">— App Router Next.js</span></div>
+      <div style="padding-left:20px">📄 layout.tsx <span style="opacity:.5">— HTML racine, import fonts, ThemeProvider</span></div>
+      <div style="padding-left:20px">📄 page.tsx <span style="opacity:.5">— Home Page</span></div>
+      <div style="padding-left:20px">📁 pricing/ → page.tsx</div>
+      <div style="padding-left:20px">📁 about/ → page.tsx</div>
+      <div style="padding-left:20px">📁 contact/ → page.tsx</div>
+      <br>
+      <div>📁 <strong>components/</strong></div>
+      <div style="padding-left:20px">📁 layout/ <span style="opacity:.5">— Header, Footer, ThemeToggle</span></div>
+      <div style="padding-left:20px">📁 sections/ <span style="opacity:.5">— HeroBasic, HeroActions, CardGrid, PanelImage...</span></div>
+      <div style="padding-left:20px">📁 ui/ <span style="opacity:.5">— Button, Input, Card, Tag, Badge...</span></div>
+      <br>
+      <div>📄 <strong>tailwind.config.js</strong> <span style="opacity:.5">— TOUTES les couleurs/typo/spaces ici</span></div>
+      <div>📄 <strong>app/globals.css</strong> <span style="opacity:.5">— CSS variables Light/Dark</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Règle d'organisation des composants</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:8px;padding:16px">
+      <div class="label">ui/</div>
+      <p style="font-size:13px;margin:8px 0 0">Atomes réutilisables<br>Button, Input, Card, Badge, Avatar...</p>
+    </div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:8px;padding:16px">
+      <div class="label">sections/</div>
+      <p style="font-size:13px;margin:8px 0 0">Blocs de page complets<br>HeroBasic, CardGridIcon, PanelImageContent, PageNewsletter...</p>
+    </div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:8px;padding:16px">
+      <div class="label">layout/</div>
+      <p style="font-size:13px;margin:8px 0 0">Enveloppe globale<br>Header (avec nav + toggle), Footer</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Animations Framer Motion — stratégie</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:8px;padding:16px">
+      <div class="label">Au scroll (sections)</div>
+      <ul style="font-size:13px;margin:8px 0 0;padding-left:16px">
+        <li>fade-in + slide-up via <code>useInView</code></li>
+        <li>Chaque section s'anime à l'entrée dans le viewport</li>
+      </ul>
+    </div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:8px;padding:16px">
+      <div class="label">Sur les éléments</div>
+      <ul style="font-size:13px;margin:8px 0 0;padding-left:16px">
+        <li>Cards : scale + shadow au hover</li>
+        <li>Boutons CTA : animation légère</li>
+        <li>Transitions de pages via <code>AnimatePresence</code></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:24px;font-size:14px;opacity:.7">👉 Est-ce que cette structure te convient ? Réponds dans le terminal.</p>

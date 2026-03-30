@@ -1,0 +1,48 @@
+<h2>Design — Section 3 : Composition des pages</h2>
+<p class="subtitle">Chaque page = un assemblage de composants tirés des templates Figma, dans l'ordre.</p>
+
+<div class="section">
+  <h3>🏠 Home Page <span style="font-weight:400;opacity:.6">— app/page.tsx</span></h3>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>1. <strong>Header</strong> — navigation + logo + toggle dark/light</span><span style="opacity:.5">layout/</span></div>
+    <div style="background:#4ade8022;border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>2. <strong>HeroActions</strong> — titre hero, sous-titre, 2 boutons CTA</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>3. <strong>CardGridIcon</strong> — grille de 3-6 features avec icônes</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>4. <strong>PanelImageContent</strong> — section "Comment ça marche"</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>5. <strong>CardGridTestimonials</strong> — témoignages clients</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:#4ade8022;border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>6. <strong>PageNewsletter</strong> — CTA final + capture email</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>7. <strong>Footer</strong></span><span style="opacity:.5">layout/</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>💰 Pricing <span style="font-weight:400;opacity:.6">— app/pricing/page.tsx</span></h3>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>1. <strong>Header</strong></span><span style="opacity:.5">layout/</span></div>
+    <div style="background:#4ade8022;border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>2. <strong>HeroBasic</strong> — titre page + sous-titre court</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>3. <strong>CardGridPricing</strong> — 3 plans (Free / Pro / Enterprise)</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>4. <strong>PageAccordion</strong> — FAQ</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>5. <strong>Footer</strong></span><span style="opacity:.5">layout/</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>👋 About <span style="font-weight:400;opacity:.6">— app/about/page.tsx</span></h3>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>1. <strong>Header</strong></span><span style="opacity:.5">layout/</span></div>
+    <div style="background:#4ade8022;border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>2. <strong>HeroBasic</strong> — "Notre mission"</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>3. <strong>PanelImageContent</strong> — histoire / valeurs</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>4. <strong>CardGridIcon</strong> — équipe ou valeurs clés</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>5. <strong>Footer</strong></span><span style="opacity:.5">layout/</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>✉️ Contact <span style="font-weight:400;opacity:.6">— app/contact/page.tsx</span></h3>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>1. <strong>Header</strong></span><span style="opacity:.5">layout/</span></div>
+    <div style="background:#4ade8022;border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>2. <strong>HeroForm</strong> — formulaire de contact intégré dans le hero</span><span style="opacity:.5">sections/</span></div>
+    <div style="background:var(--option-bg,#f5f5f5);border-radius:6px;padding:10px 14px;font-size:13px;display:flex;justify-content:space-between"><span>3. <strong>Footer</strong></span><span style="opacity:.5">layout/</span></div>
+  </div>
+</div>
+
+<p style="margin-top:24px;font-size:14px;opacity:.7">Les sections vertes = points d'entrée animés (Framer Motion fade-in au scroll). Cette composition te convient ? Réponds dans le terminal.</p>

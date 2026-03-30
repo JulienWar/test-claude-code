@@ -1,0 +1,82 @@
+<h2>Design — Section 2 : Tokens de design</h2>
+<p class="subtitle">Tout ce que tu peux modifier dans <strong>tailwind.config.js</strong> et <strong>globals.css</strong> sans toucher aux composants.</p>
+
+<div class="section">
+  <h3>globals.css — variables Light / Dark</h3>
+  <div class="mockup">
+    <div class="mockup-header">app/globals.css</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:12px;line-height:1.9">
+      <div style="opacity:.5">/* Light mode — depuis Figma "SDS Light" */</div>
+      <div>:root {</div>
+      <div style="padding-left:20px">--color-bg: #ffffff;</div>
+      <div style="padding-left:20px">--color-bg-secondary: #f5f5f5;</div>
+      <div style="padding-left:20px">--color-bg-brand: #111111;</div>
+      <div style="padding-left:20px">--color-text: #111111;</div>
+      <div style="padding-left:20px">--color-text-secondary: #737373;</div>
+      <div style="padding-left:20px">--color-border: rgba(12,12,13,0.1);</div>
+      <div>}</div>
+      <br>
+      <div style="opacity:.5">/* Dark mode — depuis Figma "SDS Dark" */</div>
+      <div>.dark {</div>
+      <div style="padding-left:20px">--color-bg: #111111;</div>
+      <div style="padding-left:20px">--color-bg-secondary: #1c1c1c;</div>
+      <div style="padding-left:20px">--color-bg-brand: #f5f5f5;</div>
+      <div style="padding-left:20px">--color-text: #f5f5f5;</div>
+      <div style="padding-left:20px">--color-text-secondary: #a3a3a3;</div>
+      <div style="padding-left:20px">--color-border: rgba(255,255,255,0.1);</div>
+      <div>}</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>tailwind.config.js — tout en un endroit</h3>
+  <div class="mockup">
+    <div class="mockup-header">tailwind.config.js</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:12px;line-height:1.9">
+      <div>theme: {</div>
+      <div style="padding-left:20px">colors: {</div>
+      <div style="padding-left:40px">bg: 'var(--color-bg)',</div>
+      <div style="padding-left:40px">secondary: 'var(--color-bg-secondary)',</div>
+      <div style="padding-left:40px">brand: 'var(--color-bg-brand)',</div>
+      <div style="padding-left:40px">text: 'var(--color-text)',</div>
+      <div style="padding-left:40px">muted: 'var(--color-text-secondary)',</div>
+      <div style="padding-left:40px">border: 'var(--color-border)',</div>
+      <div style="padding-left:20px">},</div>
+      <div style="padding-left:20px">fontFamily: {</div>
+      <div style="padding-left:40px">sans: ['Inter', 'sans-serif'],   <span style="opacity:.5">// Figma: Family Sans</span></div>
+      <div style="padding-left:40px">serif: ['Noto Serif', 'serif'],  <span style="opacity:.5">// Figma: Family Serif</span></div>
+      <div style="padding-left:40px">mono: ['Roboto Mono', 'monospace'],</div>
+      <div style="padding-left:20px">},</div>
+      <div style="padding-left:20px">fontSize: {</div>
+      <div style="padding-left:40px">hero: '72px',   subtitle: '32px',</div>
+      <div style="padding-left:40px">page: '48px',   heading: '24px',</div>
+      <div style="padding-left:40px">body: '16px',   small: '14px',</div>
+      <div style="padding-left:20px">},</div>
+      <div style="padding-left:20px">spacing: { <span style="opacity:.5">/* Scale Figma : 4, 8, 12, 16, 24, 32, 48, 64, 96, 160 */</span></div>
+      <div style="padding-left:40px">1: '4px', 2: '8px', 3: '12px', 4: '16px',</div>
+      <div style="padding-left:40px">6: '24px', 8: '32px', 12: '48px', 16: '64px', 24: '96px',</div>
+      <div style="padding-left:20px">},</div>
+      <div style="padding-left:20px">borderRadius: { sm: '4px', md: '8px', lg: '16px', full: '9999px' },</div>
+      <div>}</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Résultat dans un composant</h3>
+  <div class="mockup">
+    <div class="mockup-header">Exemple d'utilisation</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:12px;line-height:1.9">
+      <div><span style="opacity:.5">// Pour changer la couleur de fond de TOUT le site :</span></div>
+      <div><span style="opacity:.5">// tu modifies --color-bg dans globals.css. C'est tout.</span></div>
+      <br>
+      <div>&lt;section className=<span style="color:#4ade80">"bg-bg text-text py-12 px-6"</span>&gt;</div>
+      <div style="padding-left:20px">&lt;h1 className=<span style="color:#4ade80">"font-sans text-hero font-bold"</span>&gt;</div>
+      <div style="padding-left:20px">&lt;p className=<span style="color:#4ade80">"text-muted text-body mt-4"</span>&gt;</div>
+      <div>&lt;/section&gt;</div>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:24px;font-size:14px;opacity:.7">👉 Ces tokens te conviennent ? Réponds dans le terminal.</p>

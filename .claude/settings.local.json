@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:/Users/warin/Desktop/testcc&webflow\")",
+      "Bash(ls \"C:/Users/warin/Desktop/testcc&webflow\"/.git)",
+      "Bash(ls -la \"C:/Users/warin/Desktop/testcc&webflow/\")",
+      "Bash(bash \"C:/Users/warin/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh\" --project-dir \"C:/Users/warin/Desktop/testcc&webflow\")",
+      "Bash(find \"C:/Users/warin/Desktop/testcc&webflow/.superpowers/brainstorm\" -name server-info)",
+      "Bash(cat \"C:/Users/warin/Desktop/testcc&webflow/.superpowers/brainstorm/1125-1774865441/state/server-info\")",
+      "mcp__b5689606-e792-462b-8e50-974f06982398__use_figma",
+      "Bash(cat \"C:/Users/warin/Desktop/testcc&webflow/.superpowers/brainstorm/1125-1774865441/state/events\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-git --yes --name \"saas-website\")",
+      "Read(//c/Users/warin/Desktop/**)",
+      "Bash(npx create-next-app@latest saas-temp --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(npm install:*)",
+      "Bash(ls -la \"C:/Users/warin/Desktop/testcc&webflow\")"
+    ]
+  }
+}
