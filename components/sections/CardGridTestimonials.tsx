@@ -3,21 +3,25 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Card } from '../ui/Card'
 
-type Testimonial = { quote: string; author: string; role: string; initials: string }
+type Testimonial = { quote: string; author: string; role: string }
 
 type CardGridTestimonialsProps = {
-  title?: string
-  testimonials?: Testimonial[]
+  title?:         string
+  testimonials?:  Testimonial[]
 }
 
 const DEFAULT_TESTIMONIALS: Testimonial[] = [
-  { quote: 'This platform transformed how our team works. We ship 3× faster than before.',    author: 'Sarah Chen',  role: 'CTO at Nexus',          initials: 'SC' },
-  { quote: "The best investment we've made. The ROI was visible within the first week.",       author: 'Marc Dupont', role: 'CEO at Lumio',           initials: 'MD' },
-  { quote: "Finally a tool that doesn't get in the way. It just works, every single time.",   author: 'Priya Patel', role: 'Lead Engineer at Orbit', initials: 'PP' },
+  { quote: 'This platform transformed how our team works. We ship 3× faster than before.',    author: 'Sarah Chen',  role: 'CTO at Nexus' },
+  { quote: "The best investment we've made. The ROI was visible within the first week.",       author: 'Marc Dupont', role: 'CEO at Lumio' },
+  { quote: "Finally a tool that doesn't get in the way. It just works, every single time.",   author: 'Priya Patel', role: 'Lead Engineer at Orbit' },
 ]
 
+function getInitials(name: string): string {
+  return name.split(' ').map(n => n[0]).join('').toUpperCase()
+}
+
 export function CardGridTestimonials({
-  title = 'Loved by teams worldwide',
+  title        = 'Loved by teams worldwide',
   testimonials = DEFAULT_TESTIMONIALS,
 }: CardGridTestimonialsProps) {
   const ref = useRef(null)
@@ -47,7 +51,7 @@ export function CardGridTestimonials({
                 <p className="text-body text-foreground flex-1">&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-brand text-background flex items-center justify-center text-small font-bold flex-shrink-0">
-                    {t.initials}
+                    {getInitials(t.author)}
                   </div>
                   <div>
                     <p className="font-semibold text-body text-foreground">{t.author}</p>

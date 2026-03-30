@@ -1,26 +1,27 @@
 'use client'
+import Link from 'next/link'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Button } from '../ui/Button'
 
 type PanelImageContentProps = {
-  badge?: string
-  title?: string
+  badge?:       string
+  title?:       string
   description?: string
-  cta?: string
-  reverse?: boolean
-  imageUrl?: string
-  imageAlt?: string
+  cta?:         { label: string; href: string }
+  reverse?:     boolean
+  imageUrl?:    string
+  imageAlt?:    string
 }
 
 export function PanelImageContent({
-  badge = 'How it works',
-  title = 'Build faster with the right tools',
+  badge       = 'How it works',
+  title       = 'Build faster with the right tools',
   description = 'Our platform gives you everything you need to design, build, and ship products your users love. No more context switching, no more lost work.',
-  cta = 'Learn more',
-  reverse = false,
-  imageUrl = 'https://picsum.photos/600/400?grayscale',
-  imageAlt = 'Product screenshot',
+  cta         = { label: 'Learn more', href: '/about' },
+  reverse     = false,
+  imageUrl    = '/images/panel-home.jpg',
+  imageAlt    = 'Product screenshot',
 }: PanelImageContentProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
@@ -42,7 +43,9 @@ export function PanelImageContent({
           )}
           <h2 className="font-sans text-page font-bold text-foreground mt-2 mb-4">{title}</h2>
           <p className="text-body text-muted mb-6">{description}</p>
-          <Button size="lg">{cta}</Button>
+          <Link href={cta.href}>
+            <Button size="lg">{cta.label}</Button>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: reverse ? -32 : 32 }}
