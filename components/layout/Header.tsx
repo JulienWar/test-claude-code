@@ -6,14 +6,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from '../ui/Button'
 
-const NAV_LINKS = [
-  { href: '/',        label: 'Home' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/about',   label: 'About' },
-  { href: '/contact', label: 'Contact' },
-]
+type NavLink = { href: string; label: string }
 
-export function Header() {
+type HeaderProps = {
+  logo: string
+  nav: NavLink[]
+  cta: { label: string; href: string }
+}
+
+export function Header({ logo, nav, cta }: HeaderProps) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
@@ -22,11 +23,11 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         <Link href="/" className="font-bold text-heading text-foreground">
-          Logo
+          {logo}
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          {NAV_LINKS.map((link) => (
+          {nav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -41,7 +42,9 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button size="sm" className="hidden md:inline-flex">Get started</Button>
+          <Link href={cta.href} className="hidden md:inline-flex">
+            <Button size="sm">{cta.label}</Button>
+          </Link>
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setOpen(!open)}
@@ -68,7 +71,7 @@ export function Header() {
             className="md:hidden overflow-hidden border-t border-border bg-background"
           >
             <div className="flex flex-col px-6 py-4 gap-4">
-              {NAV_LINKS.map((link) => (
+              {nav.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -78,7 +81,9 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button size="sm" className="w-full">Get started</Button>
+              <Link href={cta.href} onClick={() => setOpen(false)}>
+                <Button size="sm" className="w-full">{cta.label}</Button>
+              </Link>
             </div>
           </motion.nav>
         )}
