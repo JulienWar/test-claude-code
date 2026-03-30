@@ -1,71 +1,64 @@
 @import "tailwindcss";
 
-/* ── Dark mode via class strategy ── */
+/* ── Dark mode via class strategy (Tailwind v4) ── */
 @variant dark (&:where(.dark, .dark *));
 
-/* ── Design tokens (Figma "Simple Design System") ── */
+/* ── Design tokens — Light mode values (Figma "Simple Design System") ── */
+/* To change colors: edit the values here (:root) and in .dark below.    */
+/* To change fonts/sizes/spacing: edit the @theme block below.           */
 @theme {
-  /* Colors — mapped to CSS variables for light/dark switching */
-  --color-background: var(--color-bg);
-  --color-surface: var(--color-surface-val);
-  --color-brand: var(--color-brand-val);
-  --color-foreground: var(--color-fg);
-  --color-muted: var(--color-muted-val);
-  --color-border: var(--color-border-val);
+  /* Colors — static light-mode values; .dark block below overrides them */
+  --color-background: #ffffff;
+  --color-surface:    #f5f5f5;   /* Brand/100 */
+  --color-brand:      #111111;   /* Brand/1000 — inverts in dark mode */
+  --color-foreground: #111111;
+  --color-muted:      #737373;   /* Brand/500 */
+  --color-border:     rgba(12, 12, 13, 0.10);
 
   /* Typography — from Figma "Typography Primitives" */
-  --font-family-sans: var(--font-inter), sans-serif;
+  --font-family-sans:  var(--font-inter), sans-serif;
   --font-family-serif: var(--font-noto-serif), serif;
-  --font-family-mono: var(--font-roboto-mono), monospace;
+  --font-family-mono:  var(--font-roboto-mono), monospace;
 
   /* Font sizes — from Figma text styles */
-  --font-size-hero: 72px;
-  --font-size-page: 48px;
-  --font-size-subtitle: 32px;
-  --font-size-heading: 24px;
+  --font-size-hero:       72px;
+  --font-size-page:       48px;
+  --font-size-subtitle:   32px;
+  --font-size-heading:    24px;
   --font-size-subheading: 20px;
-  --font-size-body: 16px;
-  --font-size-small: 14px;
+  --font-size-body:       16px;
+  --font-size-small:      14px;
 
   /* Spacing — from Figma "Size/Space" scale (4px base) */
   --spacing-0_5: 2px;
-  --spacing-1: 4px;
+  --spacing-1:   4px;
   --spacing-1_5: 6px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --spacing-24: 96px;
-  --spacing-40: 160px;
+  --spacing-2:   8px;
+  --spacing-3:   12px;
+  --spacing-4:   16px;
+  --spacing-6:   24px;
+  --spacing-8:   32px;
+  --spacing-12:  48px;
+  --spacing-16:  64px;
+  --spacing-24:  96px;
+  --spacing-40:  160px;
 
   /* Border radius — from Figma "Size/Radius" */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
   --radius-full: 9999px;
 }
 
-/* ── Light mode — from Figma "SDS Light" ── */
-:root {
-  --color-bg: #ffffff;
-  --color-surface-val: #f5f5f5;
-  --color-brand-val: #111111;
-  --color-fg: #111111;
-  --color-muted-val: #737373;
-  --color-border-val: rgba(12, 12, 13, 0.10);
-}
-
-/* ── Dark mode — from Figma "SDS Dark" ── */
+/* ── Dark mode overrides — from Figma "SDS Dark" mode ── */
+/* Tailwind v4: override @theme variables outside @theme with .dark selector */
 .dark {
-  --color-bg: #111111;
-  --color-surface-val: #1c1c1c;
-  --color-brand-val: #f5f5f5;
-  --color-fg: #f5f5f5;
-  --color-muted-val: #a3a3a3;
-  --color-border-val: rgba(255, 255, 255, 0.10);
+  --color-background: #111111;
+  --color-surface:    #1c1c1c;
+  --color-brand:      #f5f5f5;
+  --color-foreground: #f5f5f5;
+  --color-muted:      #a3a3a3;
+  --color-border:     rgba(255, 255, 255, 0.10);
 }
 
 * {
@@ -73,7 +66,5 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
   -webkit-font-smoothing: antialiased;
 }
