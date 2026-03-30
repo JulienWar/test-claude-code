@@ -1,12 +1,21 @@
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import { Header }               from '@/components/layout/Header'
+import { Footer }               from '@/components/layout/Footer'
+import { HeroActions }          from '@/components/sections/HeroActions'
+import { CardGridIcon }         from '@/components/sections/CardGridIcon'
+import { PanelImageContent }    from '@/components/sections/PanelImageContent'
+import { CardGridTestimonials } from '@/components/sections/CardGridTestimonials'
+import { PageNewsletter }       from '@/components/sections/PageNewsletter'
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen flex items-center justify-center">
-        <p className="text-foreground text-heading">Layout OK</p>
+      <main>
+        <HeroActions />
+        <CardGridIcon />
+        <PanelImageContent />
+        <CardGridTestimonials />
+        <PageNewsletter />
       </main>
       <Footer />
     </>
