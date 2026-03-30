@@ -1,0 +1,6 @@
+[build]
+  command = "node node_modules/next/dist/bin/next build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
