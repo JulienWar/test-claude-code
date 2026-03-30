@@ -29,8 +29,8 @@ export function Footer() {
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted text-small">© 2026 Logo. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="text-muted text-small hover:text-foreground">Privacy</Link>
-            <Link href="#" className="text-muted text-small hover:text-foreground">Terms</Link>
+            <Link href="#" className="text-muted text-small hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="#" className="text-muted text-small hover:text-foreground transition-colors">Terms</Link>
           </div>
         </div>
       </div>
