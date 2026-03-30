@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "badge": "✦ Now in beta",
+    "title": "The platform built\nfor your success",
+    "subtitle": "Streamline your workflow, boost productivity, and ship results faster than ever before.",
+    "cta_primary":   { "label": "Get started for free", "href": "/contact" },
+    "cta_secondary": { "label": "See how it works",     "href": "/about" }
+  },
+  "features": {
+    "title":    "Everything you need",
+    "subtitle": "All the tools to ship your product faster and scale with confidence.",
+    "items": [
+      { "icon": "⚡",  "title": "Lightning fast",       "description": "Optimized for speed at every layer of the stack, from database to UI." },
+      { "icon": "🔒",  "title": "Secure by default",    "description": "Enterprise-grade security with end-to-end encryption and SSO support." },
+      { "icon": "🔄",  "title": "Always in sync",       "description": "Real-time collaboration across your entire team without conflicts." },
+      { "icon": "📊",  "title": "Insightful analytics", "description": "Understand your data with beautiful dashboards and actionable insights." },
+      { "icon": "🔌",  "title": "Easy integrations",    "description": "Connect with 100+ tools you already use in just a few clicks." },
+      { "icon": "🛠️", "title": "Developer friendly",   "description": "A powerful API and CLI tools to build exactly what you need." }
+    ]
+  },
+  "panel": {
+    "badge":       "How it works",
+    "title":       "Build faster with the right tools",
+    "description": "Our platform gives you everything you need to design, build, and ship products your users love. No more context switching, no more lost work.",
+    "cta":         { "label": "Learn more", "href": "/about" },
+    "imageUrl":    "/images/panel-home.jpg",
+    "imageAlt":    "Product screenshot",
+    "reverse":     false
+  },
+  "testimonials": {
+    "title": "Loved by teams worldwide",
+    "items": [
+      { "quote": "This platform transformed how our team works. We ship 3× faster than before.",    "author": "Sarah Chen",  "role": "CTO at Nexus" },
+      { "quote": "The best investment we've made. The ROI was visible within the first week.",       "author": "Marc Dupont", "role": "CEO at Lumio" },
+      { "quote": "Finally a tool that doesn't get in the way. It just works, every single time.",   "author": "Priya Patel", "role": "Lead Engineer at Orbit" }
+    ]
+  },
+  "newsletter": {
+    "title":       "Start building today",
+    "subtitle":    "Join thousands of teams already using our platform to ship faster.",
+    "placeholder": "Enter your work email",
+    "cta":         "Get started free"
+  }
+}

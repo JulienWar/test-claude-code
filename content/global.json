@@ -1,0 +1,33 @@
+{
+  "logo": "YourBrand",
+  "cta": { "label": "Get started", "href": "/contact" },
+  "nav": [
+    { "label": "Home",    "href": "/" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "About",   "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "tagline": "The platform that helps you build faster, smarter, and with more confidence.",
+    "columns": [
+      {
+        "title": "Product",
+        "links": [
+          { "label": "Home",    "href": "/" },
+          { "label": "Pricing", "href": "/pricing" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About",   "href": "/about" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      }
+    ],
+    "legal": [
+      { "label": "Privacy", "href": "#" },
+      { "label": "Terms",   "href": "#" }
+    ]
+  }
+}

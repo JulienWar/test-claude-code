@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "badge":    "About us",
+    "title":    "Built by builders, for builders",
+    "subtitle": "We're a small, focused team on a mission to make software development more human."
+  },
+  "panel": {
+    "badge":       "Our story",
+    "title":       "We started because we were frustrated",
+    "description": "After years of using fragmented tools that didn't talk to each other, we decided to build the platform we always wished existed. Three years later, thousands of teams rely on us daily.",
+    "cta":         { "label": "Join our team", "href": "/contact" },
+    "imageUrl":    "/images/panel-about.jpg",
+    "imageAlt":    "Team at work",
+    "reverse":     true
+  },
+  "values": {
+    "title":    "What we stand for",
+    "subtitle": "Three core values that guide every decision we make.",
+    "items": [
+      { "icon": "🎯", "title": "Mission first",     "description": "We exist to help teams ship better products faster. Everything we build serves that mission." },
+      { "icon": "🤝", "title": "Customer obsessed", "description": "We talk to our users every day and build what they actually need, not what we assume they need." },
+      { "icon": "🚀", "title": "Move fast",         "description": "We ship weekly and iterate based on real feedback. Perfect is the enemy of shipped." }
+    ]
+  }
+}

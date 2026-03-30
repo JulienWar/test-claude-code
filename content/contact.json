@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title":    "Get in touch",
+    "subtitle": "We'd love to hear from you. Fill out the form and we'll get back to you shortly."
+  },
+  "form": {
+    "firstNameLabel": "First name",
+    "lastNameLabel":  "Last name",
+    "emailLabel":     "Email",
+    "companyLabel":   "Company (optional)",
+    "messageLabel":   "Message",
+    "submitLabel":    "Send message"
+  }
+}
