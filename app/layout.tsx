@@ -44,6 +44,17 @@ export default function RootLayout({
         className={`${inter.variable} ${notoSerif.variable} ${robotoMono.variable} bg-background text-foreground font-sans`}
       >
         {children}
+        <script dangerouslySetInnerHTML={{ __html: `
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        ` }} />
       </body>
     </html>
   )

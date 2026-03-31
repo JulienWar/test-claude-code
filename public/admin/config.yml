@@ -1,0 +1,232 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+
+  - name: "global"
+    label: "Global (Nav & Footer)"
+    files:
+      - name: "global"
+        label: "Navigation & Footer"
+        file: "content/global.json"
+        fields:
+          - { label: "Logo Text", name: "logo", widget: "string" }
+          - label: "Header CTA Button"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Button Label", name: "label", widget: "string" }
+              - { label: "Button URL",   name: "href",  widget: "string" }
+          - label: "Navigation Links"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL",   name: "href",  widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - label: "Link Columns"
+                name: "columns"
+                widget: "list"
+                fields:
+                  - { label: "Column Title", name: "title", widget: "string" }
+                  - label: "Links"
+                    name: "links"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL",   name: "href",  widget: "string" }
+              - label: "Legal Links (Privacy, Terms)"
+                name: "legal"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL",   name: "href",  widget: "string" }
+
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Home Page Content"
+        file: "content/home.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge Text",    name: "badge",    widget: "string" }
+              - { label: "Title",         name: "title",    widget: "string" }
+              - { label: "Subtitle",      name: "subtitle", widget: "string" }
+              - label: "Primary CTA"
+                name: "cta_primary"
+                widget: "object"
+                fields:
+                  - { label: "Button Label", name: "label", widget: "string" }
+                  - { label: "Button URL",   name: "href",  widget: "string" }
+              - label: "Secondary CTA"
+                name: "cta_secondary"
+                widget: "object"
+                fields:
+                  - { label: "Button Label", name: "label", widget: "string" }
+                  - { label: "Button URL",   name: "href",  widget: "string" }
+          - label: "Features Section"
+            name: "features"
+            widget: "object"
+            fields:
+              - { label: "Section Title",    name: "title",    widget: "string" }
+              - { label: "Section Subtitle", name: "subtitle", widget: "string" }
+              - label: "Feature Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon (emoji)", name: "icon",        widget: "string" }
+                  - { label: "Title",        name: "title",       widget: "string" }
+                  - { label: "Description",  name: "description", widget: "text" }
+          - label: "Panel Section"
+            name: "panel"
+            widget: "object"
+            fields:
+              - { label: "Badge Text",   name: "badge",       widget: "string", required: false }
+              - { label: "Title",        name: "title",       widget: "string" }
+              - { label: "Description",  name: "description", widget: "text" }
+              - label: "CTA Button"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Button Label", name: "label", widget: "string" }
+                  - { label: "Button URL",   name: "href",  widget: "string" }
+              - { label: "Image", name: "imageUrl", widget: "image" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+              - { label: "Reverse Layout", name: "reverse", widget: "boolean", default: false }
+          - label: "Testimonials Section"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Testimonials"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Quote",       name: "quote",  widget: "text" }
+                  - { label: "Author Name", name: "author", widget: "string" }
+                  - { label: "Role",        name: "role",   widget: "string" }
+          - label: "Newsletter Section"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - { label: "Title",             name: "title",       widget: "string" }
+              - { label: "Subtitle",          name: "subtitle",    widget: "string" }
+              - { label: "Input Placeholder", name: "placeholder", widget: "string" }
+              - { label: "Button Label",      name: "cta",         widget: "string" }
+
+  - name: "pricing"
+    label: "Pricing Page"
+    files:
+      - name: "pricing"
+        label: "Pricing Page Content"
+        file: "content/pricing.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge Text", name: "badge",    widget: "string" }
+              - { label: "Title",      name: "title",    widget: "string" }
+              - { label: "Subtitle",   name: "subtitle", widget: "string" }
+          - label: "Pricing Plans"
+            name: "plans"
+            widget: "list"
+            fields:
+              - { label: "Plan Name",       name: "name",        widget: "string" }
+              - { label: "Price",           name: "price",       widget: "string" }
+              - { label: "Period",          name: "period",      widget: "string" }
+              - { label: "Description",     name: "description", widget: "string" }
+              - { label: "Features",        name: "features",    widget: "list", field: { label: "Feature", name: "item", widget: "string" } }
+              - { label: "CTA Label",       name: "cta",         widget: "string" }
+              - { label: "Mark as Popular", name: "popular",     widget: "boolean", default: false }
+          - label: "FAQ Section"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "FAQ Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer",   name: "answer",   widget: "text" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About Page Content"
+        file: "content/about.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge Text", name: "badge",    widget: "string" }
+              - { label: "Title",      name: "title",    widget: "string" }
+              - { label: "Subtitle",   name: "subtitle", widget: "string" }
+          - label: "Panel Section"
+            name: "panel"
+            widget: "object"
+            fields:
+              - { label: "Badge Text",   name: "badge",       widget: "string", required: false }
+              - { label: "Title",        name: "title",       widget: "string" }
+              - { label: "Description",  name: "description", widget: "text" }
+              - label: "CTA Button"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Button Label", name: "label", widget: "string" }
+                  - { label: "Button URL",   name: "href",  widget: "string" }
+              - { label: "Image",          name: "imageUrl", widget: "image" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+              - { label: "Reverse Layout", name: "reverse",  widget: "boolean", default: false }
+          - label: "Values Section"
+            name: "values"
+            widget: "object"
+            fields:
+              - { label: "Section Title",    name: "title",    widget: "string" }
+              - { label: "Section Subtitle", name: "subtitle", widget: "string" }
+              - label: "Value Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon (emoji)", name: "icon",        widget: "string" }
+                  - { label: "Title",        name: "title",       widget: "string" }
+                  - { label: "Description",  name: "description", widget: "text" }
+
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - name: "contact"
+        label: "Contact Page Content"
+        file: "content/contact.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title",    name: "title",    widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Form Labels"
+            name: "form"
+            widget: "object"
+            fields:
+              - { label: "First Name Label", name: "firstNameLabel", widget: "string" }
+              - { label: "Last Name Label",  name: "lastNameLabel",  widget: "string" }
+              - { label: "Email Label",      name: "emailLabel",     widget: "string" }
+              - { label: "Company Label",    name: "companyLabel",   widget: "string" }
+              - { label: "Message Label",    name: "messageLabel",   widget: "string" }
+              - { label: "Submit Button",    name: "submitLabel",    widget: "string" }
