@@ -39,6 +39,8 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
           }}
         />
+        {/* Netlify Identity widget — must be on ALL pages so invitation links work */}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </head>
       <body
         className={`${inter.variable} ${notoSerif.variable} ${robotoMono.variable} bg-background text-foreground font-sans`}
