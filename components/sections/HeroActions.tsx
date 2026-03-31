@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import { motion, useInView, type Transition } from 'framer-motion'
 import { Button } from '../ui/Button'
+import { safeHref } from '@/lib/safe-href'
 
 type Cta = { label: string; href: string }
 
@@ -46,10 +47,10 @@ export function HeroActions({
           {subtitle}
         </motion.p>
         <motion.div {...item(0.3)} className="flex flex-col sm:flex-row gap-3">
-          <Link href={cta_primary.href}>
+          <Link href={safeHref(cta_primary.href)}>
             <Button size="lg">{cta_primary.label}</Button>
           </Link>
-          <Link href={cta_secondary.href}>
+          <Link href={safeHref(cta_secondary.href)}>
             <Button size="lg" variant="secondary">{cta_secondary.label}</Button>
           </Link>
         </motion.div>

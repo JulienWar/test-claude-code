@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { safeHref } from '@/lib/safe-href'
 
 type FooterLink   = { label: string; href: string }
 type FooterColumn = { title: string; links: FooterLink[] }
@@ -25,7 +26,7 @@ export function Footer({ logo, tagline, columns, legal }: FooterProps) {
               <ul className="flex flex-col gap-2">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-muted text-body hover:text-foreground transition-colors">
+                    <Link href={safeHref(link.href)} className="text-muted text-body hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -38,7 +39,7 @@ export function Footer({ logo, tagline, columns, legal }: FooterProps) {
           <p className="text-muted text-small">© 2026 {logo}. All rights reserved.</p>
           <div className="flex gap-6">
             {legal.map((link) => (
-              <Link key={link.href} href={link.href} className="text-muted text-small hover:text-foreground transition-colors">
+              <Link key={link.href} href={safeHref(link.href)} className="text-muted text-small hover:text-foreground transition-colors">
                 {link.label}
               </Link>
             ))}

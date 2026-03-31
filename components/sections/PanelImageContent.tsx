@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Button } from '../ui/Button'
+import { safeHref } from '@/lib/safe-href'
 
 type PanelImageContentProps = {
   badge?:       string
@@ -43,7 +44,7 @@ export function PanelImageContent({
           )}
           <h2 className="font-sans text-page font-bold text-foreground mt-2 mb-4">{title}</h2>
           <p className="text-body text-muted mb-6">{description}</p>
-          <Link href={cta.href}>
+          <Link href={safeHref(cta.href)}>
             <Button size="lg">{cta.label}</Button>
           </Link>
         </motion.div>

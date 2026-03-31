@@ -43,9 +43,14 @@ export function PageNewsletter({
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
           className="flex flex-col sm:flex-row gap-3 w-full max-w-md"
+          name="newsletter"
+          method="POST"
+          data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="newsletter" />
           <input
             type="email"
+            name="email"
             placeholder={placeholder}
             className="flex-1 px-4 py-3 rounded-md bg-background/10 border border-background/20 text-background placeholder:text-background/50 text-body focus:outline-none focus:ring-2 focus:ring-background/30"
           />

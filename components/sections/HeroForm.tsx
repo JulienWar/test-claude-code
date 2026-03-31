@@ -39,7 +39,13 @@ export function HeroForm({
       >
         <h1 className="font-sans text-page font-bold text-foreground mb-2">{title}</h1>
         <p className="text-muted text-body mb-8">{subtitle}</p>
-        <form className="flex flex-col gap-4">
+        <form
+          className="flex flex-col gap-4"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input id="firstName" name="firstName" label={firstNameLabel} placeholder="Jane" />
             <Input id="lastName"  name="lastName"  label={lastNameLabel}  placeholder="Smith" />

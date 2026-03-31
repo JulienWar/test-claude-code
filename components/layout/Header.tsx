@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from '../ui/Button'
+import { safeHref } from '@/lib/safe-href'
 
 type NavLink = { href: string; label: string }
 
@@ -30,7 +31,7 @@ export function Header({ logo, nav, cta }: HeaderProps) {
           {nav.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={safeHref(link.href)}
               className={`text-body transition-colors hover:text-foreground ${
                 pathname === link.href ? 'text-foreground font-semibold' : 'text-muted'
               }`}
@@ -42,7 +43,7 @@ export function Header({ logo, nav, cta }: HeaderProps) {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link href={cta.href} className="hidden md:inline-flex">
+          <Link href={safeHref(cta.href)} className="hidden md:inline-flex">
             <Button size="sm">{cta.label}</Button>
           </Link>
           <button
@@ -74,14 +75,14 @@ export function Header({ logo, nav, cta }: HeaderProps) {
               {nav.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={safeHref(link.href)}
                   onClick={() => setOpen(false)}
                   className={`text-body ${pathname === link.href ? 'text-foreground font-semibold' : 'text-muted'}`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href={cta.href} onClick={() => setOpen(false)}>
+              <Link href={safeHref(cta.href)} onClick={() => setOpen(false)}>
                 <Button size="sm" className="w-full">{cta.label}</Button>
               </Link>
             </div>
